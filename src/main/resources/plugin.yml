@@ -1,0 +1,5 @@
+name: MCVanillaDynamicLighting
+version: '${project.version}'
+main: me.randomgamingdev.mcvanilladynamiclighting.MCVanillaDynamicLighting
+api-version: 1.19
+description: A plugin for vanilla dynamic lighting in Minecraft.
