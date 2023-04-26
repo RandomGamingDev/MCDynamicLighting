@@ -6,6 +6,7 @@ import org.bukkit.Server;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.BlockData;
+import org.bukkit.block.data.Levelled;
 import org.bukkit.block.data.Lightable;
 import org.bukkit.block.data.Waterlogged;
 import org.bukkit.block.data.type.Light;
@@ -77,7 +78,7 @@ public class LightCalc extends BukkitRunnable {
         Block block = location.getBlock();
         Material blockType = block.getType();
         boolean isWater = blockType == Material.WATER;
-        if (blockType != Material.AIR && !isWater)
+        if (blockType != Material.AIR && (!isWater && ((Levelled)block).getLevel() == 0))
             return false;
         block.setType(Material.LIGHT);
         Light lightData = (Light)block.getBlockData();
