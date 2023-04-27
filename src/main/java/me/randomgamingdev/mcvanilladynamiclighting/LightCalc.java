@@ -44,7 +44,7 @@ public class LightCalc extends BukkitRunnable {
             new Pair<Material, Integer>(Material.GLOW_LICHEN, 7),
             new Pair<Material, Integer>(Material.REDSTONE_TORCH, 7),
             new Pair<Material, Integer>(Material.SEA_PICKLE, 6),
-            new Pair<Material, Integer>(Material.SCULK_CATALYST, 6),
+            //new Pair<Material, Integer>(Material.SCULK_CATALYST, 6),
             new Pair<Material, Integer>(Material.AMETHYST_CLUSTER, 5),
             new Pair<Material, Integer>(Material.LARGE_AMETHYST_BUD, 4),
             new Pair<Material, Integer>(Material.MAGMA_BLOCK, 3),
