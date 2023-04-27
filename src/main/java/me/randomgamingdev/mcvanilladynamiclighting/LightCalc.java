@@ -70,8 +70,8 @@ public class LightCalc extends BukkitRunnable {
                 block.setType(Material.WATER);
             else
                 block.setType(Material.AIR);
-            lightSources.removeFirst();
         }
+        lightSources.clear();
     }
 
     public boolean PlaceLight(Location location, int level) {
