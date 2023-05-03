@@ -1,9 +1,6 @@
 package me.randomgamingdev.mcvanilladynamiclighting;
 
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Server;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.block.data.Levelled;
@@ -78,7 +75,13 @@ public class LightCalc extends BukkitRunnable {
         Block block = location.getBlock();
         Material blockType = block.getType();
         boolean isWater = blockType == Material.WATER;
-        if (blockType != Material.AIR && !(isWater && ((Levelled)block).getLevel() == 0))
+        if (blockType == Material.AIR) {}
+        else if (isWater) {
+            Levelled waterLevel = (Levelled)block.getBlockData();
+            if (waterLevel.getLevel() != 0)
+                return false;
+        }
+        else
             return false;
         block.setType(Material.LIGHT);
         Light lightData = (Light)block.getBlockData();
